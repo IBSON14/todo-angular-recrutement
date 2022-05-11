@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <h3>{{name}}</h3>
+          <a name="" id="" class="btn btn-warning" (click)="deconnexion()" role="button">Deconnexion</a>
+        </div>
+        <div class="col-md-8">
+            <a name="" id="" class="btn btn-primary" [routerLink]="['/add']" role="button">Ajouter</a>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Label</th>
+                        <th>Date</th>
+                        <th>Done</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let todo of todos">
+                        <td scope="row">{{todo.todo_id}}</td>
+                        <td>{{todo.todo_label}}</td>
+                        <td>{{todo.todo_date}}</td>
+                        <td>{{todo.todo_is_done}}</td>
+                        <td>
+                            <a name="" id="" class="btn btn-warning" [routerLink]="['/edit', todo.todo_id]" role="button">Edit</a>
+                            <a name="" id="" class="btn btn-danger" (click)="delete(todo.todo_id)" role="button">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

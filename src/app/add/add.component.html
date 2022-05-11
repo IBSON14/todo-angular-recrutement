@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h4>Ajouter un Todo</h4>
+            <hr>
+            
+            <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="login">Label :</label>
+                    <input type="text" name="todo_label" class="form-control" placeholder="Libelle Todo"
+                        formControlName="todo_label">
+                </div>
+                <div class="form-group">
+                    <label for="pass">Etat :</label>
+                      <select class="form-control" name="todo_is_done" id="" formControlName="todo_is_done">
+                        <option>0</option>
+                        <option>1</option>
+                      </select>
+                </div>
+                <button type="submit" class="btn btn-success">Enregistrer</button>
+            </form>
+        </div>
+
+    </div>
+</div>
